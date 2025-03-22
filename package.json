@@ -2,6 +2,7 @@
   "name": "page-ui-nextjs-example",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://kokkini.github.io/voicebot-landing-page",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

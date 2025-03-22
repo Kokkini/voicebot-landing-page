@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/voicebot',
+  basePath: '/voicebot-landing-page',
+  assetPrefix: '/voicebot-landing-page/',
   images: {
     domains: ['picsum.photos'],
     unoptimized: true,

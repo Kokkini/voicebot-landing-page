@@ -13,6 +13,7 @@ import {
 import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
 import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
 import { LandingMarquee } from '@/components/landing/LandingMarquee';
+import { getBaseUrl } from './config';
 
 import { Button } from '@/components/shared/ui/button';
 import { colors } from '@/data/config/colors';
@@ -22,6 +23,7 @@ import { LandingProductHuntAward } from '@/components/landing/social-proof/Landi
 import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
 
 export default function Component() {
+  const baseUrl = getBaseUrl();
   const avatarItems = [
     {
       imageSrc: 'https://picsum.photos/id/64/100/100',
@@ -66,11 +68,11 @@ export default function Component() {
         leadingComponent={<LandingProductHuntAward />}
       >
         <Button size="xl" variant="secondary" asChild>
-          <a href="#">Buy Now</a>
+          <a href={`${baseUrl}/#pricing`}>Buy Now</a>
         </Button>
 
         <Button size="xl" variant="outlineSecondary">
-          <a href="#">Learn More</a>
+          <a href={`${baseUrl}/#features`}>Learn More</a>
         </Button>
 
         <LandingDiscount
