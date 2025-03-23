@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/shared/ui/button';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
@@ -9,9 +10,11 @@ import { useTheme } from 'next-themes';
 export default function NavbarSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -19,6 +22,35 @@ export default function NavbarSection() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Prevent hydration mismatch by not rendering theme-dependent content until mounted
+  if (!mounted) {
+    return (
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex-shrink-0">
+              <Link href="/" className="flex items-center space-x-2">
+                <Image
+                  src="/voicebot-landing-page/images/logo.png"
+                  alt="VoiceBot Logo"
+                  width={64}
+                  height={64}
+                  className="w-12 h-12"
+                />
+                <span className="text-2xl font-bold">
+                  VoiceBot
+                </span>
+              </Link>
+            </div>
+            <div className="md:hidden">
+              <div className="w-8 h-8" /> {/* Placeholder for theme button */}
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   const navItems = [
     { label: 'Features', href: '#features' },
@@ -38,8 +70,17 @@ export default function NavbarSection() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors">
-                VoiceBot
+              <Link href="/" className="flex items-center space-x-2">
+                <Image
+                  src="/voicebot-landing-page/images/logo.png"
+                  alt="VoiceBot Logo"
+                  width={64}
+                  height={64}
+                  className="w-12 h-12"
+                />
+                <span className="text-2xl font-bold">
+                  VoiceBot
+                </span>
               </Link>
             </div>
 
