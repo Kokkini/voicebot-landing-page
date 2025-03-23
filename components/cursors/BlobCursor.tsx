@@ -17,7 +17,6 @@ const BlobCursor = ({ blobType = 'circle', fillColor = '#fegefe' }) => {
   const handleMove = (e: MouseEvent | TouchEvent) => {
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-    console.log('Move detected', clientX, clientY);
     api.start({ xy: [clientX, clientY] });
   };
 
