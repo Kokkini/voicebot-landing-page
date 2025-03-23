@@ -19,6 +19,9 @@ import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingP
 import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
 import { LandingMarquee } from '@/components/landing/LandingMarquee';
 import { getBaseUrl } from './config';
+import { LandingHeader } from '@/components/landing/navigation/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/navigation/LandingHeaderMenuItem';
+import NavbarSection from '@/sections/NavbarSection';
 
 import { Button } from '@/components/shared/ui/button';
 import { colors } from '@/data/config/colors';
@@ -42,14 +45,15 @@ import OneFeatureSection from '@/sections/OneFeatureSection';
 import RatingSummarySection from '@/sections/RatingSummarySection';
 import TestimonialSection from '@/sections/TestimonialSection';
 import BigFeatureListSection from '@/sections/BigFeatureListSection';
-import TopSocialProofBandSection from '@/sections/TopSocialProofBandSection';
+
 
 export default function Component() {
   const baseUrl = getBaseUrl();
 
   return (
     <>
-      <TopSocialProofBandSection />
+      <NavbarSection />
+      {/* <TopSocialProofBandSection /> */}
 
       <PrimaryVideoCtaSection />
 
