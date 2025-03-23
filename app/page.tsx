@@ -166,7 +166,7 @@ export default function Component() {
         }
         withBackground
         variant="secondary"
-        imageSrc="/images/starsky.jpg"
+        imageSrc={`${baseUrl}/images/starsky.jpg`}
         imageAlt="Screenshot of the product"
         imagePosition="center"
         textPosition="center"

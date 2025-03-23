@@ -1,5 +1,5 @@
 export const config = {
-  basePath: process.env.NODE_ENV === 'production' ? '/voicebot-landing-page' : ''
+  basePath: '/voicebot-landing-page'
 } as const;
 
 export function getBaseUrl() {

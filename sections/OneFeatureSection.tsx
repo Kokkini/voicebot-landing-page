@@ -1,7 +1,8 @@
 import { Button } from '@/components/shared/ui/button';
 import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
-
+import { getBaseUrl } from '@/app/config';
 export default function Component() {
+  const baseUrl = getBaseUrl();
   return (
     <LandingProductFeature
       title="Smart Task Prioritization"
@@ -20,7 +21,7 @@ export default function Component() {
           <p className="text-sm">First month is on us.</p>
         </>
       }
-      imageSrc="/images/starsky.jpg"
+      imageSrc={`${baseUrl}/images/starsky.jpg`}
       imageAlt="Craft Unique Solutions with Ease"
       imagePosition="left"
       imagePerspective="none"

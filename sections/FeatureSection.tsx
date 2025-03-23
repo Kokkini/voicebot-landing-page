@@ -2,8 +2,10 @@ import { Button } from '@/components/shared/ui/button';
 
 import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
 import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+import { getBaseUrl } from '@/app/config';
 
 export default function Component() {
+  const baseUrl = getBaseUrl();
   return (
     <LandingProductFeature
       title="Supercharge Your Efficiency!"
@@ -36,7 +38,7 @@ export default function Component() {
           <p className="text-sm">7 day free trial, no credit card required.</p>
         </>
       }
-      imageSrc="/images/starsky.jpg"
+      imageSrc={`${baseUrl}/images/starsky.jpg`}
       imageAlt="Screenshot of the product"
       imagePosition="left"
       imagePerspective="bottom"
