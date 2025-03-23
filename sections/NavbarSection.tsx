@@ -6,12 +6,15 @@ import Image from 'next/image';
 import { Button } from '@/components/shared/ui/button';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { getBaseUrl } from '@/app/config';
 
 export default function NavbarSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  const baseUrl = getBaseUrl();
 
   useEffect(() => {
     setMounted(true);
@@ -32,7 +35,7 @@ export default function NavbarSection() {
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center space-x-2">
                 <Image
-                  src="/voicebot-landing-page/images/logo.png"
+                  src={`${baseUrl}/images/logo.png`}
                   alt="VoiceBot Logo"
                   width={64}
                   height={64}

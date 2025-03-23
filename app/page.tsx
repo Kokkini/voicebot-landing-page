@@ -1,42 +1,10 @@
-import {
-  ChromeIcon,
-  FigmaIcon,
-  GithubIcon,
-  FramerIcon,
-  TwitchIcon,
-  TwitterIcon,
-  GitlabIcon,
-  InstagramIcon,
-  SlackIcon,
-  ThumbsUpIcon,
-  LayersIcon,
-  ZapIcon,
-  SparklesIcon,
-  LineChartIcon,
-} from 'lucide-react';
-
-import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
-import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
-import { LandingMarquee } from '@/components/landing/LandingMarquee';
 import { getBaseUrl } from './config';
-import { LandingHeader } from '@/components/landing/navigation/LandingHeader';
-import { LandingHeaderMenuItem } from '@/components/landing/navigation/LandingHeaderMenuItem';
 import NavbarSection from '@/sections/NavbarSection';
 
 import { Button } from '@/components/shared/ui/button';
 import { colors } from '@/data/config/colors';
-import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
-import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
-import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
-import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
-import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
 import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
-import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
-import { LandingBandSection } from '@/components/landing/LandingBand';
 import { LandingSaleCtaSection } from '@/components/landing/cta/LandingSaleCta';
-import { LandingTestimonialReadMoreWrapper } from '@/components/landing/testimonial/LandingTestimonialReadMoreWrapper';
-import { LandingTestimonialGrid } from '@/components/landing/testimonial/LandingTestimonialGrid';
-import { LandingFeatureList } from '@/components/landing/feature/LandingFeatureList';
 import FaqSection from '@/sections/FaqSection';
 import PrimaryVideoCtaSection from '@/sections/PrimaryVideoCtaSection';
 import FeatureSection from '@/sections/FeatureSection';
@@ -45,7 +13,9 @@ import OneFeatureSection from '@/sections/OneFeatureSection';
 import RatingSummarySection from '@/sections/RatingSummarySection';
 import TestimonialSection from '@/sections/TestimonialSection';
 import BigFeatureListSection from '@/sections/BigFeatureListSection';
-
+import FooterSection from '@/sections/FooterSection';
+import LandingNavbarSection from '@/sections/LandingNavbarSection';
+import PricingSection from '@/sections/PricingSection';
 
 export default function Component() {
   const baseUrl = getBaseUrl();
@@ -53,6 +23,7 @@ export default function Component() {
   return (
     <>
       <NavbarSection />
+      {/* <LandingNavbarSection /> */}
       {/* <TopSocialProofBandSection /> */}
 
       <PrimaryVideoCtaSection />
@@ -76,7 +47,6 @@ export default function Component() {
             </Button>
           </>
         }
-        withBackground
         variant="secondary"
         imageSrc={`${baseUrl}/images/starsky.jpg`}
         imageAlt="Screenshot of the product"
@@ -89,7 +59,9 @@ export default function Component() {
         description="Our AI-powered task prioritization feature automatically organizes your to-do list based on deadlines, importance, and your work patterns, ensuring you focus on the most critical tasks first."
         ctaHref="https://gum.co/product"
         ctaLabel="Sign up now"
+        withBackground
         withBackgroundGlow
+        variant="secondary"
       />
 
       <TestimonialSection />
@@ -97,6 +69,10 @@ export default function Component() {
       <BigFeatureListSection />
 
       <FaqSection />
+
+      <PricingSection />
+
+      <FooterSection />
 
       {/* Background gradient */}
       <div

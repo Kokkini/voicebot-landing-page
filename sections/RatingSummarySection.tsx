@@ -21,6 +21,8 @@ export default function Component() {
     <LandingBandSection
       title="4.9/5 stars"
       description="Our customers love our product."
+      withBackground={true}
+      variant="secondary"
       supportingComponent={
         <LandingSocialProof
           showRating
