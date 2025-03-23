@@ -17,7 +17,6 @@ import FooterSection from '@/sections/FooterSection';
 import PricingSection from '@/sections/PricingSection';
 // import BubbleCursor from '@/components/cursors/BubbleCursor';
 import BlobCursor from '@/components/cursors/BlobCursor';
-// import NeonCursor from '@/components/cursors/NeonCursor';
 // import FollowCursor from '@/components/cursors/FollowCursor';
 
 export default function Component() {
@@ -97,7 +96,6 @@ export default function Component() {
       ></div>
       {/* <BubbleCursor /> */}
       <BlobCursor fillColor={colors.primary.lighter} />
-      {/* <NeonCursor /> */}
       {/* <FollowCursor /> */}
     </>
   );

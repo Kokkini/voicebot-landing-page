@@ -1,13 +1,12 @@
-// @ts-nocheck
 'use client';
 import { useTrail, animated } from '@react-spring/web';
-import { useRef, useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 
 import './BlobCursor.css';
 
 const fast = { tension: 1200, friction: 40 };
 const slow = { mass: 10, tension: 200, friction: 50 };
-const trans = (x, y) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
+const trans = (x: number, y: number) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
 
 const BlobCursor = ({ blobType = 'circle', fillColor = '#fegefe' }) => {
   const [trail, api] = useTrail(3, (i) => ({
@@ -15,9 +14,11 @@ const BlobCursor = ({ blobType = 'circle', fillColor = '#fegefe' }) => {
     config: i === 0 ? fast : slow,
   }));
 
-  const handleMove = (e) => {
-    console.log('Mouse move detected', e.clientX, e.clientY);
-    api.start({ xy: [e.clientX, e.clientY] });
+  const handleMove = (e: MouseEvent | TouchEvent) => {
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    console.log('Move detected', clientX, clientY);
+    api.start({ xy: [clientX, clientY] });
   };
 
   useEffect(() => {
