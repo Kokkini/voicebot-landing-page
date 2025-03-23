@@ -14,7 +14,6 @@ import RatingSummarySection from '@/sections/RatingSummarySection';
 import TestimonialSection from '@/sections/TestimonialSection';
 import BigFeatureListSection from '@/sections/BigFeatureListSection';
 import FooterSection from '@/sections/FooterSection';
-import LandingNavbarSection from '@/sections/LandingNavbarSection';
 import PricingSection from '@/sections/PricingSection';
 
 export default function Component() {
@@ -23,56 +22,62 @@ export default function Component() {
   return (
     <>
       <NavbarSection />
-      {/* <LandingNavbarSection /> */}
-      {/* <TopSocialProofBandSection /> */}
 
-      <PrimaryVideoCtaSection />
+      <main>
+        <section id="home">
+          <PrimaryVideoCtaSection />
+        </section>
 
-      <FeatureSection />
+        <section id="features">
+          <FeatureSection />
+          <FeatureVideoSection />
+          <OneFeatureSection />
+        </section>
 
-      <FeatureVideoSection />
+        <RatingSummarySection />
 
-      <OneFeatureSection />
+        <LandingProductFeature
+          title="One-click API Integration"
+          descriptionComponent={
+            <>
+              With our API integration capability, seamlessly connect our app with
+              all popular providers.
+              <Button variant="outlineSecondary" asChild>
+                <a href="#">Check out our SDK</a>
+              </Button>
+            </>
+          }
+          variant="secondary"
+          imageSrc={`${baseUrl}/images/starsky.jpg`}
+          imageAlt="Screenshot of the product"
+          imagePosition="center"
+          textPosition="center"
+        />
 
-      <RatingSummarySection />
+        <LandingSaleCtaSection
+          title="No more complexity, just simplicity"
+          description="Our AI-powered task prioritization feature automatically organizes your to-do list based on deadlines, importance, and your work patterns, ensuring you focus on the most critical tasks first."
+          ctaHref="https://gum.co/product"
+          ctaLabel="Sign up now"
+          withBackground
+          withBackgroundGlow
+          variant="secondary"
+        />
 
-      <LandingProductFeature
-        title="One-click API Integration"
-        descriptionComponent={
-          <>
-            With our API integration capability, seamlessly connect our app with
-            all popular providers.
-            <Button variant="outlineSecondary" asChild>
-              <a href="#">Check out our SDK</a>
-            </Button>
-          </>
-        }
-        variant="secondary"
-        imageSrc={`${baseUrl}/images/starsky.jpg`}
-        imageAlt="Screenshot of the product"
-        imagePosition="center"
-        textPosition="center"
-      />
+        <TestimonialSection />
 
-      <LandingSaleCtaSection
-        title="No more complexity, just simplicity"
-        description="Our AI-powered task prioritization feature automatically organizes your to-do list based on deadlines, importance, and your work patterns, ensuring you focus on the most critical tasks first."
-        ctaHref="https://gum.co/product"
-        ctaLabel="Sign up now"
-        withBackground
-        withBackgroundGlow
-        variant="secondary"
-      />
+        <BigFeatureListSection />
 
-      <TestimonialSection />
+        <section id="articles">
+          <FaqSection />
+        </section>
 
-      <BigFeatureListSection />
+        <section id="pricing">
+          <PricingSection />
+        </section>
 
-      <FaqSection />
-
-      <PricingSection />
-
-      <FooterSection />
+        <FooterSection />
+      </main>
 
       {/* Background gradient */}
       <div

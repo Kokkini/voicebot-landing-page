@@ -62,6 +62,23 @@ export default function NavbarSection() {
     { label: 'Contact', href: '#contact' },
   ];
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      const navbarHeight = 80; // Height of the navbar (h-20 = 5rem = 80px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsMenuOpen(false); // Close mobile menu if open
+  };
+
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -93,6 +110,7 @@ export default function NavbarSection() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={(e) => handleScroll(e, item.href)}
                   className="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 >
                   {item.label}
@@ -150,8 +168,8 @@ export default function NavbarSection() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={(e) => handleScroll(e, item.href)}
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
