@@ -15,6 +15,10 @@ import TestimonialSection from '@/sections/TestimonialSection';
 import BigFeatureListSection from '@/sections/BigFeatureListSection';
 import FooterSection from '@/sections/FooterSection';
 import PricingSection from '@/sections/PricingSection';
+// import BubbleCursor from '@/components/cursors/BubbleCursor';
+import BlobCursor from '@/components/cursors/BlobCursor';
+// import NeonCursor from '@/components/cursors/NeonCursor';
+// import FollowCursor from '@/components/cursors/FollowCursor';
 
 export default function Component() {
   const baseUrl = getBaseUrl();
@@ -91,6 +95,10 @@ export default function Component() {
           backgroundAttachment: 'fixed',
         }}
       ></div>
+      {/* <BubbleCursor /> */}
+      <BlobCursor fillColor={colors.primary.lighter} />
+      {/* <NeonCursor /> */}
+      {/* <FollowCursor /> */}
     </>
   );
 }
