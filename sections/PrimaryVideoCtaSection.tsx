@@ -34,11 +34,11 @@ export default function Component() {
       leadingComponent={<LandingProductHuntAward />}
     >
       <Button size="xl" variant="secondary" asChild>
-        <a href="#">Buy Now</a>
+        <a href="#pricing">Buy Now</a>
       </Button>
 
       <Button size="xl" variant="outlineSecondary">
-        <a href="#">Learn More</a>
+        <a href="#features">Learn More</a>
       </Button>
 
       <LandingDiscount
